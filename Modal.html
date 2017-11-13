@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ 	<style>
+ 	/* style the image used to trigger the modal*/
+ 	#myImg{
+ 		border-radius:5px;
+ 		cursor:pointer;
+ 		transition:0.5s;
+ 	}
+ 	#myImg:hover{
+ 		opacity:0.7;
+ 	}
+     /* the modal*/
+ 	.modal{
+ 		display:none;
+ 		position:fixed;
+ 		left:0;
+ 		top:0;
+ 		width:100%;
+ 		height:100%;
+ 		background-color:rgb(0,0,0);
+ 		background-color:rgba(0,0,0,0.9);
+
+ 	}
+ 	/* modal-content*/
+ 	.modal-content{
+ 		margin:auto;
+ 		display:block;
+ 		width:80%;
+ 		max-width:700px;
+ 	}
+ 	#caption{
+ 		margin:auto;
+ 		display:block;
+ 		width:80%;
+ 		max-width:700px;
+ 		text-align:center;
+ 		color:green;
+ 		padding:10px 0;
+ 		height:150px;
+
+
+ 	}
+ 	/*add animation*/
+ 	.modal-content,#caption{
+ 		animation-name:zoom;
+ 		animation-duration:0.6s;
+ 	}
+ 	@keyframes zoom{
+ 		from{transform:scale(0);}
+ 		to{transform:scale(1);}
+
+ 	}
+ 	/* close button*/
+ 	.close{
+ 		position:absolute;
+ 		top:15px;
+ 		right:35px;
+ 		color:#f1f1f1;
+ 		font-size:40px;
+ 		font-weight:bold;
+ 		transition:0.3s;
+ 	}
+ 	.close:hover,
+ 	.close:focus{
+ 		color:#bbb;
+ 		cursor:pointer;
+ 		text-decoration:none;
+ 	}
+ 	/*100% image for small screens*/
+ 	@media only screen and (max-width:700px){
+ 		.modal-content{
+ 			width:100%;
+ 		}
+ 	}
+ </style>
+	</head>
+	<body>
+		<!--trigger/open the model-->
+		<img  id="myImg"src="C:\Users\puppa\Desktop\Web dev p\Images\nature.jpg" alt="nature" width="300" height="200">
+		<!-- The modal-->
+		<div id="myModal" class="modal">
+		
+			<span class="close">&times;</span>
+			<!-- modal content-->
+			<img class="modal-content" id="myImg01">
+			<!-- modal caption-->
+			<div id="caption">
+			</div>
+			
+		</div>
+		<script>
+			/* get the image */
+			var img=document.getElementById("myImg")
+			// get the modal and insert the image into the modal
+			 var modal=document.getElementById("myModal");
+			 var modalImage=document.getElementById("myImg01");
+			 var captionText=document.getElementById("caption");
+			 img.onclick=function(){
+			 	modal.style.display="block";
+			 	modalImage.src=this.src;
+			 	captionText.innerHTML=this.alt;
+			 }
+			 //get th span element
+			 var span=document.getElementsByClassName("close")[0];
+			 //when user clicks ont he span it should hide
+			 span.onclick=function(){
+			 	modal.style.display="none";
+			 }
+		</script>
+	</body>
+</html>

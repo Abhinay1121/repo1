@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<style>
+    	  body{
+    	  	margin:0;
+    	  }
+    	 
+    	  .icon-bar{
+    	  	width:100%;
+    	  	background-color:#555;
+    	  	overflow:auto;
+    	  }
+    	  .icon-bar a{
+    	  	width:20%;
+    	  	float:left;
+    	  	text-align:center;
+    	  	color:white;
+    	  	font-size:36px;
+    	  	padding:12px 0;
+    	  	transition:all 4s;
+
+    	  
+    	  
+
+
+    	  }
+    	  .icon-bar a:hover{
+    	  	background-color:#000;
+    	  }
+    	  .active{
+    	  	background-color:#4CAF50;
+    	  }
+    	  .accordion{
+    	  	border:none;
+    	  	text-align:center;
+    	  	background-color:black;
+    	  	color:white;
+    	  	cursor:pointer;
+    	  	font-size:15px;
+    	  	transition:0.4s;
+    	  	width:100%;
+    	  	padding:20px 0;
+
+
+    	  }
+    	 button .accordion.active,button.accordion:hover{
+    	  	background-color:#ddd;
+
+    	  }
+    	   button.accordion:after{
+    	  	content:'\02795';
+    	  	font-size:13px;
+    	  	color:#777;
+    	  	float:right;
+    	  	margin-left:5px;
+
+    	  }
+    	  button.accordion.active:after{
+    	  	content:"\2796";
+    	  }
+    	  div.panel{
+    	  	padding:0 18px;
+    	  	display:none;
+    	  	background-color:white;
+    	  	max-height:0;
+    	  	overflow:hidden;
+    	  	transition:max-height 0.2s ease-out;
+    	  }
+    	 
+    	  
+    	  
+        </style>
+  	</head>
+  	<body>
+  		<div class="icon-bar">
+  			<a class="active"href="#"><i class="fa fa-home"></i></a>
+  			<a href="#"><i class="fa fa-search"></i></a>
+  			<a href="#"><i class="fa fa-envelope"></i></a>
+  			<a href="#"><i class="fa fa-globe"></i></a>
+  			<a href="#"><i class="fa fa-trash"></i></a>
+  		</div>	
+  		<h2>Accordion</h2>
+  		<button  class="accordion">Section 1</button>
+  		<div  class="panel">
+  			<p>Lorem ipsum hjd vdhjbchbs vcjsbcdhhbd bhsjckmj ghkjcnjchd uinnjshkjnn jnkj jnkkhjjn .
+  			</p>
+  		</div>
+  		<button class="accordion">Section 2</button>
+  		<div class="panel">
+  			<p>hxjdbb hjnjkjdjkmk xklmknmxkmm,mknknk,m.
+  			</p>
+  		</div>
+  		<button class="accordion">Section 3</button>
+  		<div class="panel">
+  			<p>hxjdbb hjnjkjdjkmk xklmknmxkmm,mknknk,m.
+  			</p>
+  		</div>
+  		<script>
+  			var x=document.getElementsByClassName("accordion");
+  			var i;
+  			for(i=0; i<x.length; i++){
+  				x[i].onclick=function(){
+  					this.classList.toggle("active");
+  					var panel=this.nextElementSibling;
+  					if (panel.style.maxHeight){
+  						panel.style.maxHeight=null;
+  					}else{
+  						panel.style.maxHeight=panel.scrollHeight +"px";
+  					}
+
+  				}
+  			}
+
+
+  			
+  		</script>
+  	</body>	
+</html>

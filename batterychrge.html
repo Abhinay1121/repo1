@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+    <head>
+ 	 <title>Battery Charging</title>
+ 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 	</head>
+ 	<body>
+ 		<p>Battery is charging:</p>
+ 		<div id="charging" class="fa">
+ 		</div>
+ 		<script>
+ 			function chargebattery(){
+ 				var a=document.getElementById("charging");
+ 				a.innerHTML="&#Xf244;";
+ 				setTimeout(function(){a.innerHTML="&#Xf243;";},1000);
+ 				setTimeout(function(){a.innerHTML="&#Xf242;";},2000);
+ 				setTimeout(function(){a.innerHTML="&#Xf241;";},3000);
+ 				setTimeout(function(){a.innerHTML="&#Xf240;";},4000);
+ 			}
+ 			chargebattery();
+ 			setInterval(chargebattery,5000);
+ 		</script>
+ 	</body>
+</html>
